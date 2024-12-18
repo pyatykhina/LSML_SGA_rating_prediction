@@ -2,17 +2,21 @@
 
 ### Experiment tracking:
 https://www.comet.com/pyatykhina/general/view/new/panels
+
 **.env** file sample:
 ```
 COMET_API_KEY=...
 COMET_PROJECT_NAME=...
 COMET_WORKSPACE=...
 ```
-<img src="./images/cometml.png" alt="comet ml screenshot" width="400"/>
+<img src="./images/cometml.png" alt="comet ml screenshot" width="600"/>
 
 
-### Docker start command:
+### Docker start commands:
 ```
 docker run -it -p 9999:8888 gradient_boosting_model-api
 ```
-http://localhost:9999
+```
+docker-compose up --build
+```
+API: http://localhost:9999

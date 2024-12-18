@@ -1,0 +1,28 @@
+services:
+  api:
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    ports:
+      - "9999:8888"
+    volumes:
+      - ./api:/app
+    networks:
+      - app_network
+    container_name: gradient_boosting_model-api
+
+  client:
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - api
+    networks:
+      - app_network
+    container_name: gradient_boosting_model-client
+
+networks:
+  app_network:
+    driver: bridge
